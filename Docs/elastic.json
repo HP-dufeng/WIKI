@@ -1,0 +1,222 @@
+// Create mapping
+PUT wiki-question
+{
+  "mappings": {
+    "doc": {
+      "properties": {
+        "join_field": {
+          "type": "join",
+          "relations": {
+            "question": "answer"
+          }
+        },
+        "Id": {
+          "type": "long"
+        },
+        "ContentNo": {
+          "type": "text"
+        },
+        "ContentType": {
+          "type": "keyword"
+        },
+        "Title": {
+          "type": "text",
+          "analyzer": "ik_max_word"
+        },
+        "Text": {
+          "type": "text",
+          "analyzer": "ik_max_word"
+        },
+        "Sticky": {
+          "type": "boolean"
+        },
+        "Important": {
+          "type": "boolean"
+        },
+        "Tags": {
+          "type": "keyword"
+        },
+        "Audit": {
+          "properties": {
+            "CreatedTime": {
+                "type": "date",
+                "format": "yyyy-MM-dd HH:mm:ss.SSS"
+              },
+              "CreatedBy": {
+                "type": "keyword"
+              },
+              "UpdatedTime": {
+                "type": "date",
+                "format": "yyyy-MM-dd HH:mm:ss.SSS"
+              },
+              "UpdatedBy": {
+                "type": "keyword"
+              }
+          }
+        },
+        "ExpandProperty": {
+          "properties": {
+            "CreatedBy": {
+              "type": "keyword"
+            },
+            "UpdatedBy": {
+              "type": "keyword"
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+PUT wiki-document
+{
+  "mappings": {
+    "doc": {
+      "properties": {
+        "Id": {
+          "type": "long"
+        },
+        "ContentNo": {
+          "type": "text"
+        },
+        "ContentType": {
+          "type": "keyword"
+        },
+        "Title": {
+          "type": "text",
+          "analyzer": "ik_max_word"
+        },
+        "Description": {
+          "type": "text",
+          "analyzer": "ik_max_word"
+        },
+        "Sticky": {
+          "type": "boolean"
+        },
+        "Important": {
+          "type": "boolean"
+        },
+        "Tags": {
+          "type": "keyword"
+        },
+        "Audit": {
+          "properties": {
+            "CreatedTime": {
+              "type": "date",
+              "format": "yyyy-MM-dd HH:mm:ss.SSS"
+            },
+            "CreatedBy": {
+              "type": "keyword"
+            },
+            "UpdatedTime": {
+              "type": "date",
+              "format": "yyyy-MM-dd HH:mm:ss.SSS"
+            },
+            "UpdatedBy": {
+              "type": "keyword"
+            }
+          }
+        },
+        "ExpandProperty": {
+          "properties": {
+            "CreatedBy": {
+              "type": "keyword"
+            },
+            "UpdatedBy": {
+              "type": "keyword"
+            }
+          }
+        },
+        "DocumentAttachment": {
+          "properties": {
+            "Id": { "type": "long" },
+            "DocumentId": { "type": "long" },
+            "FileName": {
+              "type": "text",
+              "analyzer": "ik_max_word"
+            },
+            "DisplayName": {
+              "type": "text",
+              "analyzer": "ik_max_word"
+              }
+            }
+          }
+        }
+      }
+  }
+}
+
+// Create or update question
+GET wiki-question/doc/1
+{
+  "join_field": "question",
+  "Id": 1,
+  "ContentNo": "DO20171123141750",
+  "ContentType": "Question",
+  "Title": "华信期货有哪些行情软件？",
+  "Text": "如题",
+  "Sticky": true,
+  "Important": true,
+  "Tags": ["软件使用","软件"],
+  "Audit": {
+    "CreatedTime": "2017-11-17 14:12:33.610",
+    "CreatedBy": "admin",
+    "UpdatedTime": null,
+    "UpdatedBy": null
+  },
+  "ExpandProperty": {
+    "CreatedBy": "管理员",
+    "UpdatedBy": null
+  }
+}
+
+// Create or update answer
+// routing: questionId
+GET wiki-question/doc/6FFAEFBD-770C-46B6-BEF3-0CE82B0E3643?routing=1&refresh
+{
+  "join_field": {
+    "name": "answer",
+    "parent": "1"
+  },
+  "Id": 1,
+  "Text": "博易大师、文华财经、金仕达交易",
+  "Audit": {
+    "CreatedTime": "2017-11-17 14:12:33.610",
+    "CreatedBy": "admin",
+    "UpdatedTime": "2017-11-20 18:55:56.457",
+    "UpdatedBy": "admin"
+  },
+  "ExpandProperty": {
+    "CreatedBy": "管理员",
+    "UpdatedBy": "管理员"
+  }
+}
+
+
+// Create or update document
+GET wiki-document/doc/1
+{
+  "Id": 1,
+  "ContentNo": "DO20171123141750",
+  "ContentType": "Document",
+  "Title": "华信期货客户提款通知书201706--客户出金使用",
+  "Description": "客户提款文档",
+  "Sticky": true,
+  "Important": true,
+  "Tags": ["出金"],
+  "Audit": {
+    "CreatedTime": "2017-11-17 14:12:33.610",
+    "CreatedBy": "admin",
+    "UpdatedTime": null,
+    "UpdatedBy": null
+  },
+  "ExpandProperty": {
+    "CreatedBy": "管理员",
+    "UpdatedBy": null
+  },
+  "DocumentAttachment": [
+    {"Id": 1, "DocumentId": 1, "FileName": "980f7c8c-5aa8-4004-b773-a9c59f744656", "DisplayName": "华信期货客户提款通知书201706--客户出金使用.docx"},
+    {"Id": 2, "DocumentId": 1, "FileName": "fbc7e2da-8a2d-41bd-af64-4474a66e9580", "DisplayName": "华信期货客户退款申请书201706--客户跨行入金退款使用.docx"}
+    ]
+}

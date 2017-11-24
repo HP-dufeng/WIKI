@@ -112,4 +112,4 @@ Templates/All-In-One-Template/MySpaProject/MySpaProject.Web/Logs/Logs.txt
 /Templates/All-In-One-Template/MySpaProject/MySpaProject.WebSpaDurandal/Logs/Logs.txt
 /src/.vs/config/applicationhost.config
 /src/WIKI.WebSpaAngular/App_Data/Logs/Logs.txt
-/src/WIKI.Web/App_Data/Logs/Logs.txt
+/src/WIKI.Webapi/App_Data/Logs/Logs.txt

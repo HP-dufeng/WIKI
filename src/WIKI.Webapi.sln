@@ -1,0 +1,66 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2006
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WIKI.WebApi", "WIKI.Webapi\WIKI.WebApi.csproj", "{92D87C3B-AD8D-4BC2-95BD-6954F7B9D5C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WIKI.WebApi.EntityFramework", "WIKI.Webapi.EntityFramework\WIKI.WebApi.EntityFramework.csproj", "{8CC9EE63-D24C-4A4D-8BCC-BBFAFE3B6413}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{64C42C58-5215-4145-92D3-3146176E6B3B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WIKI.Common", "Infrastructure\WIKI.Common\WIKI.Common.csproj", "{624C97C6-60CA-4809-9CC4-8C29636753DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WIKI.WebApi.Core", "WIKI.WebApi.Core\WIKI.WebApi.Core.csproj", "{251B3302-D482-4C7D-8981-CFC165791692}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WindowsService", "WindowsService", "{7CCA06DA-9816-48A4-8F3A-4B466F41FCDF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WIKI.WindowsService", "Infrastructure\WindowsService\WIKI.WindowsService\WIKI.WindowsService.csproj", "{A91DD3F7-DE81-4854-93B0-00D6F41C42A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WIKI.MassTransit.Consumer", "Infrastructure\WindowsService\WIKI.MassTransit.Consumer\WIKI.MassTransit.Consumer.csproj", "{A9D323CB-366D-4FA3-8F3E-0E33DAE0C964}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{92D87C3B-AD8D-4BC2-95BD-6954F7B9D5C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92D87C3B-AD8D-4BC2-95BD-6954F7B9D5C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92D87C3B-AD8D-4BC2-95BD-6954F7B9D5C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92D87C3B-AD8D-4BC2-95BD-6954F7B9D5C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CC9EE63-D24C-4A4D-8BCC-BBFAFE3B6413}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CC9EE63-D24C-4A4D-8BCC-BBFAFE3B6413}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CC9EE63-D24C-4A4D-8BCC-BBFAFE3B6413}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CC9EE63-D24C-4A4D-8BCC-BBFAFE3B6413}.Release|Any CPU.Build.0 = Release|Any CPU
+		{624C97C6-60CA-4809-9CC4-8C29636753DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{624C97C6-60CA-4809-9CC4-8C29636753DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{624C97C6-60CA-4809-9CC4-8C29636753DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{624C97C6-60CA-4809-9CC4-8C29636753DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{251B3302-D482-4C7D-8981-CFC165791692}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{251B3302-D482-4C7D-8981-CFC165791692}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{251B3302-D482-4C7D-8981-CFC165791692}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{251B3302-D482-4C7D-8981-CFC165791692}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A91DD3F7-DE81-4854-93B0-00D6F41C42A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A91DD3F7-DE81-4854-93B0-00D6F41C42A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A91DD3F7-DE81-4854-93B0-00D6F41C42A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A91DD3F7-DE81-4854-93B0-00D6F41C42A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9D323CB-366D-4FA3-8F3E-0E33DAE0C964}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9D323CB-366D-4FA3-8F3E-0E33DAE0C964}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9D323CB-366D-4FA3-8F3E-0E33DAE0C964}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9D323CB-366D-4FA3-8F3E-0E33DAE0C964}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{624C97C6-60CA-4809-9CC4-8C29636753DC} = {64C42C58-5215-4145-92D3-3146176E6B3B}
+		{7CCA06DA-9816-48A4-8F3A-4B466F41FCDF} = {64C42C58-5215-4145-92D3-3146176E6B3B}
+		{A91DD3F7-DE81-4854-93B0-00D6F41C42A1} = {7CCA06DA-9816-48A4-8F3A-4B466F41FCDF}
+		{A9D323CB-366D-4FA3-8F3E-0E33DAE0C964} = {7CCA06DA-9816-48A4-8F3A-4B466F41FCDF}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.Data.6.0.1304.0\lib\NET45
+		SolutionGuid = {C048167E-E78C-461F-89CC-E8B2CC337061}
+	EndGlobalSection
+EndGlobal

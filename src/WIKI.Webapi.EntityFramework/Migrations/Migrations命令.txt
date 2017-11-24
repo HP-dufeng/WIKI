@@ -1,0 +1,11 @@
+﻿//初始化 只需执行一次
+Enable-Migrations -ContextTypeName PMS.Reports.Entity.DailyReportsDbContext -MigrationsDirectory:Migrations
+
+//迁移命令
+Add-Migration -ConfigurationTypeName PMS.Reports.Entity.Migrations.Configuration 迁移名称
+Update-Database -ConfigurationTypeName PMS.Reports.Entity.Migrations.Configuration -TargetMigration 迁移名称
+
+
+Add-Migration InitialCreate
+
+Update-Database -Script -SourceMigration $InitialDatabase
