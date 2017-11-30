@@ -220,3 +220,33 @@ GET wiki-document/doc/1
     {"Id": 2, "DocumentId": 1, "FileName": "fbc7e2da-8a2d-41bd-af64-4474a66e9580", "DisplayName": "华信期货客户退款申请书201706--客户跨行入金退款使用.docx"}
     ]
 }
+
+// Search Questions
+GET wiki-content-question/_search
+{
+  "query": {
+    "bool": {
+      "should": [
+        {
+          "bool": {
+            "must":[
+              { "term": { "join_field":   "question"        }}, 
+              { "match": { "Title": "华信" }}
+            ]
+          }
+        },
+        {
+          "has_child" : {
+              "type" : "answer",
+              "query" : {
+                  "match" : {
+                      "Text" : "金仕达"
+                  }
+              },
+              "inner_hits": {}
+            }
+        }
+      ]
+    }
+  }
+}
