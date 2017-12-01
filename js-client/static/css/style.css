@@ -1,0 +1,348 @@
+.icon-load {
+  animation: ani-spin 1s linear infinite;
+}
+
+@keyframes ani-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.canvas {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+}
+
+.clearfix {
+  clear: both;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotateY(0deg);
+  }
+  100% {
+    -webkit-transform: rotateY(360deg);
+  }
+}
+
+.clientMsg {
+  width: 180px;
+}
+
+.myNumberInput {
+  width: 180px !important;
+}
+
+/*.dataSelect .ivu-select-dropdown{*/
+/*left:-132px!important;*/
+/*}*/
+.main {
+  min-height: 920px;
+}
+
+.ivu-upload-list-file {
+  color: red !important;
+}
+
+.ivu-upload-list-file-finish {
+  color: green !important;
+}
+
+.layerStyle .ivu-tooltip-popper {
+  position: absolute !important;
+}
+
+.editCell {
+  display: inline-block;
+  width: 33%;
+}
+
+.layerStyle .editCell {
+  display: block;
+  width: auto;
+}
+
+.ivu-message, .ivu-notice {
+  z-index: 999999999 !important;
+}
+
+.ivu-modal-mask, .ivu-modal-wrap {
+  z-index: 99999 !important;
+}
+
+.ivu-table .warning-row {
+  color: red;
+  display: table-cell;
+}
+
+.zTop .ivu-modal-mask, .zTop .ivu-modal-wrap {
+  z-index: 999999 !important;
+}
+
+.hxLayer .ivu-modal-mask, .hxLayer .ivu-modal-wrap {
+  z-index: 99999 !important;
+}
+
+.fileUplod h3 {
+  border-left: 6px solid #39f;
+  padding-left: 12px;
+  font-size: 16px;
+  margin: 8px 0px;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.5s
+}
+
+.fade-enter, .fade-leave-active {
+  opacity: 0
+}
+
+.bounce-enter-active {
+  animation: bounce-in .5s;
+}
+
+.bounce-leave-active {
+  animation: bounce-out .5s;
+}
+
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes bounce-out {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+
+.slide-fade-leave-active {
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+
+.slide-fade-enter, .slide-fade-leave-active {
+  padding-left: 10px;
+  opacity: 0;
+}
+
+.rspan {
+  text-align: right;
+}
+
+.tableCellRight table th, .tableCellRight table td {
+  text-align: right;
+}
+
+.setTop {
+  color: red;
+  padding-right: 3px;
+}
+
+.tag {
+  margin: 2px 0px 4px 0px;
+}
+
+.tag .tag-icon {
+  font-size: 17px;
+  color: #2d8cf0;
+  position: relative;
+  top: 3px;
+}
+
+.tag span {
+  /*display: inline-block;*/
+  /*padding: 2px 6px;*/
+  /*margin: 2px 4px 2px 0px;*/
+  /*!*background: #dbdbdb;*!*/
+  /*!*padding: 0 10px;*!*/
+  /*border: 1px solid #CFD7DC;*/
+  /*-webkit-border-radius: 3px;*/
+  /*-moz-border-radius: 3px;*/
+  /*border-radius: 3px;*/
+  /*font-size: 12px;*/
+  /*line-height: 1.5;*/
+}
+
+.problem-itme-init-text {
+  word-wrap: break-word;
+}
+.problem-itme-init-text table{
+  border-spacing: 0px;
+}
+.simp-question-tit {
+  font-size: 17px;
+  line-height: 28px;
+  word-wrap: break-word;
+}
+
+.simp-question-tit label {
+  cursor: pointer;
+}
+
+.simp-question-tit label:hover {
+  color: #2e82ff;
+}
+
+.simp-question-wrap {
+  float: left;
+  padding: 20px;
+  border-bottom: 1px solid #dbdbdb;
+}
+
+.simp-question-answer {
+  height: 41px;
+  overflow: hidden;
+  line-height: 20px;
+  word-wrap: break-word;
+}
+
+.simp-question-tip {
+  overflow: hidden;
+  margin-top: 12px;
+}
+
+.simp-question-tip-left {
+  float: right;
+  margin-right: 20px;
+}
+
+.simp-question-tip-right {
+  float: right;
+}
+
+.wiki-list {
+  margin-top: 30px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.wiki-list .wiki-list-tit {
+  border-left: 6px solid #019275;
+  padding-left: 12px;
+  font-size: 20px;
+}
+
+.wiki-list .wiki-list-tit .more {
+  float: right;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.header h3 {
+  text-align: center;
+  font-size: 24px;
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  background: #dbdbdb;
+}
+
+.search-wiki-list {
+  width: 50%;
+  /*margin:0px auto;*/
+  overflow: hidden;
+  margin-left: 80px;
+}
+
+.search-wiki-list .simp-question-wrap {
+  width: 100%;
+  padding: 0px;
+  padding-top: 20px;
+}
+
+.goBack {
+  float: right;
+  font-size: 15px;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.pager {
+  text-align: center;
+  padding: 20px 0px;
+}
+
+.mt20 {
+  margin-top: 20px;
+}
+
+.tip-switch {
+  margin-left: 12px;
+}
+
+.tip-switch span {
+  margin-right: 8px;
+}
+
+.tagpositon {
+  position: relative;
+  display: inline-block;
+}
+
+.filter-tags {
+  position: absolute;
+  top: 32px;
+  left: 0px;
+  z-index: 999;
+  border: 1px solid #dddee1;
+  width: 180px;
+  overflow-y: auto;
+  max-height: 110px;
+  background: #fff;
+  display: none;
+}
+
+.filter-tags li {
+  padding: 0px 12px;
+  border-top: 1px solid #dddee1;
+  cursor: pointer;
+  height: 28px;
+  line-height: 28px;
+}
+
+.filter-tags li:hover {
+  color: #fff;
+  background: #2d8cf0;
+}
+
+.filterTags li:first-child {
+  border-top: 0px none;
+}
