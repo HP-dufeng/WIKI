@@ -1,5 +1,5 @@
 // Create mapping
-PUT wiki-question
+PUT wiki-content-question
 {
   "mappings": {
     "doc": {
@@ -10,57 +10,89 @@ PUT wiki-question
             "question": "answer"
           }
         },
-        "Id": {
+        "id": {
           "type": "long"
         },
-        "ContentNo": {
+        "contentNo": {
           "type": "text"
         },
-        "ContentType": {
+        "contentType": {
           "type": "keyword"
         },
-        "Title": {
+        "title": {
           "type": "text",
           "analyzer": "ik_max_word"
         },
-        "Text": {
+        "text": {
           "type": "text",
           "analyzer": "ik_max_word"
         },
-        "Sticky": {
+        "sticky": {
           "type": "boolean"
         },
-        "Important": {
+        "important": {
           "type": "boolean"
         },
-        "Tags": {
-          "type": "keyword"
+        "tags": {
+          "type": "text",
+          "analyzer": "ik_max_word",
+          "fields": {
+            "keyword":{"type": "keyword"}
+          }
         },
-        "Audit": {
+        "audit": {
           "properties": {
-            "CreatedTime": {
+            "createdTime": {
                 "type": "date",
                 "format": "yyyy-MM-dd HH:mm:ss.SSS"
               },
-              "CreatedBy": {
-                "type": "keyword"
+              "createdBy": {
+                "type": "text",
+                "fields": {
+                  "keyword":{"type": "keyword"}
+                }
               },
-              "UpdatedTime": {
+              "updatedTime": {
                 "type": "date",
                 "format": "yyyy-MM-dd HH:mm:ss.SSS"
               },
-              "UpdatedBy": {
-                "type": "keyword"
+              "updatedBy": {
+                "type": "text",
+                "fields": {
+                  "keyword":{"type": "keyword"}
+                }
               }
           }
         },
-        "ExpandProperty": {
+        "expandProperty": {
           "properties": {
-            "CreatedBy": {
-              "type": "keyword"
+            "createdBy": {
+              "type": "text",
+              "analyzer": "ik_max_word",
+              "fields": {
+                "keyword":{"type": "keyword"}
+              }
             },
-            "UpdatedBy": {
-              "type": "keyword"
+            "updatedBy": {
+              "type": "text",
+              "analyzer": "ik_max_word",
+              "fields": {
+                "keyword":{"type": "keyword"}
+              }
+            },
+            "createdByDept": {
+              "type": "text",
+              "analyzer": "ik_max_word",
+              "fields": {
+                "keyword":{"type": "keyword"}
+              }
+            },
+            "updatedByDept": {
+              "type": "text",
+              "analyzer": "ik_max_word",
+              "fields": {
+                "keyword":{"type": "keyword"}
+              }
             }
           }
         }
@@ -69,76 +101,164 @@ PUT wiki-question
   }
 }
 
-PUT wiki-document
+PUT wiki-content-document
 {
   "mappings": {
     "doc": {
       "properties": {
-        "Id": {
+        "id": {
           "type": "long"
         },
-        "ContentNo": {
+        "contentNo": {
           "type": "text"
         },
-        "ContentType": {
+        "contentType": {
           "type": "keyword"
         },
-        "Title": {
+        "title": {
           "type": "text",
           "analyzer": "ik_max_word"
         },
-        "Description": {
+        "description": {
           "type": "text",
           "analyzer": "ik_max_word"
         },
-        "Sticky": {
+        "sticky": {
           "type": "boolean"
         },
-        "Important": {
+        "important": {
           "type": "boolean"
         },
-        "Tags": {
-          "type": "keyword"
+        "tags": {
+          "type": "text",
+          "analyzer": "ik_max_word",
+          "fields": {
+            "keyword":{"type": "keyword"}
+          }
         },
-        "Audit": {
+        "audit": {
           "properties": {
-            "CreatedTime": {
+            "createdTime": {
               "type": "date",
               "format": "yyyy-MM-dd HH:mm:ss.SSS"
             },
-            "CreatedBy": {
-              "type": "keyword"
+            "createdBy": {
+              "type": "text",
+              "fields": {
+                "keyword":{"type": "keyword"}
+              }
             },
-            "UpdatedTime": {
+            "updatedTime": {
               "type": "date",
               "format": "yyyy-MM-dd HH:mm:ss.SSS"
             },
-            "UpdatedBy": {
-              "type": "keyword"
+            "updatedBy": {
+              "type": "text",
+              "fields": {
+                "keyword":{"type": "keyword"}
+              }
             }
           }
         },
-        "ExpandProperty": {
+        "expandProperty": {
           "properties": {
-            "CreatedBy": {
-              "type": "keyword"
+            "createdBy": {
+              "type": "text",
+              "analyzer": "ik_max_word",
+              "fields": {
+                "keyword":{"type": "keyword"}
+              }
             },
-            "UpdatedBy": {
-              "type": "keyword"
+            "updatedBy": {
+              "type": "text",
+              "analyzer": "ik_max_word",
+              "fields": {
+                "keyword":{"type": "keyword"}
+              }
+            },
+            "createdByDept": {
+              "type": "text",
+              "analyzer": "ik_max_word",
+              "fields": {
+                "keyword":{"type": "keyword"}
+              }
+            },
+            "updatedByDept": {
+              "type": "text",
+              "analyzer": "ik_max_word",
+              "fields": {
+                "keyword":{"type": "keyword"}
+              }
             }
           }
         },
-        "DocumentAttachment": {
+        "documentAttachment": {
           "properties": {
-            "Id": { "type": "long" },
-            "DocumentId": { "type": "long" },
-            "FileName": {
+            "id": { "type": "long" },
+            "documentId": { "type": "long" },
+            "fileName": {
               "type": "text",
               "analyzer": "ik_max_word"
             },
-            "DisplayName": {
+            "displayName": {
               "type": "text",
               "analyzer": "ik_max_word"
+              },
+              "audit": {
+                "properties": {
+                  "createdTime": {
+                    "type": "date",
+                    "format": "yyyy-MM-dd HH:mm:ss.SSS"
+                  },
+                  "createdBy": {
+                    "type": "text",
+                    "fields": {
+                      "keyword":{"type": "keyword"}
+                    }
+                  },
+                  "updatedTime": {
+                    "type": "date",
+                    "format": "yyyy-MM-dd HH:mm:ss.SSS"
+                  },
+                  "updatedBy": {
+                    "type": "text",
+                    "fields": {
+                      "keyword":{"type": "keyword"}
+                    }
+                  }
+                }
+              },
+              "expandProperty": {
+                "properties": {
+                  "createdBy": {
+                    "type": "text",
+                    "analyzer": "ik_max_word",
+                    "fields": {
+                      "keyword":{"type": "keyword"}
+                    }
+                  },
+                  "updatedBy": {
+                    "type": "text",
+                    "analyzer": "ik_max_word",
+                    "fields": {
+                      "keyword":{"type": "keyword"}
+                    }
+                  },
+                  "createdByDept": {
+                    "type": "text",
+                    "analyzer": "ik_max_word",
+                    "fields": {
+                      "keyword":{"type": "keyword"}
+                    }
+                  },
+                  "updatedByDept": {
+                    "type": "text",
+                    "analyzer": "ik_max_word",
+                    "fields": {
+                      "keyword":{"type": "keyword"}
+                    }
+                  }
+                }
               }
             }
           }
@@ -148,7 +268,7 @@ PUT wiki-document
 }
 
 // Create or update question
-GET wiki-question/doc/1
+GET wiki-content-question/doc/1
 {
   "join_field": "question",
   "Id": 1,
@@ -173,7 +293,7 @@ GET wiki-question/doc/1
 
 // Create or update answer
 // routing: questionId
-GET wiki-question/doc/6FFAEFBD-770C-46B6-BEF3-0CE82B0E3643?routing=1&refresh
+GET wiki-content-question/doc/6FFAEFBD-770C-46B6-BEF3-0CE82B0E3643?routing=1&refresh
 {
   "join_field": {
     "name": "answer",
@@ -195,7 +315,7 @@ GET wiki-question/doc/6FFAEFBD-770C-46B6-BEF3-0CE82B0E3643?routing=1&refresh
 
 
 // Create or update document
-GET wiki-document/doc/1
+GET wiki-content-document/doc/1
 {
   "Id": 1,
   "ContentNo": "DO20171123141750",
@@ -219,34 +339,4 @@ GET wiki-document/doc/1
     {"Id": 1, "DocumentId": 1, "FileName": "980f7c8c-5aa8-4004-b773-a9c59f744656", "DisplayName": "华信期货客户提款通知书201706--客户出金使用.docx"},
     {"Id": 2, "DocumentId": 1, "FileName": "fbc7e2da-8a2d-41bd-af64-4474a66e9580", "DisplayName": "华信期货客户退款申请书201706--客户跨行入金退款使用.docx"}
     ]
-}
-
-// Search Questions
-GET wiki-content-question/_search
-{
-  "query": {
-    "bool": {
-      "should": [
-        {
-          "bool": {
-            "must":[
-              { "term": { "join_field":   "question"        }}, 
-              { "match": { "Title": "华信" }}
-            ]
-          }
-        },
-        {
-          "has_child" : {
-              "type" : "answer",
-              "query" : {
-                  "match" : {
-                      "Text" : "金仕达"
-                  }
-              },
-              "inner_hits": {}
-            }
-        }
-      ]
-    }
-  }
 }
